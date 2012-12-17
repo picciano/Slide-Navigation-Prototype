@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MenuViewController.h"
+
+#define app_delegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) MenuViewController *menuViewController;
+@property (strong, nonatomic) UIViewController *contentViewController;
 
 @end

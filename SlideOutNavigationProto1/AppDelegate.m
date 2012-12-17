@@ -7,13 +7,28 @@
 //
 
 #import "AppDelegate.h"
+#import "RedViewController.h"
 
 @implementation AppDelegate
+
+@synthesize window = _window;
+@synthesize contentViewController = _contentViewController;
+@synthesize menuViewController = _menuViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    
+    // create the content view controller using the LogoExpandingViewController for no particular reason
+    self.contentViewController = [[RedViewController alloc] initWithNibName:nil bundle:nil];
+    
+    // create the menuViewController also in the app delegate so we can swap it in as the
+    // windows root view controller whenever its required
+    self.menuViewController = [[MenuViewController alloc] initWithNibName:nil bundle:nil];
+    
+    // set the rootViewController to the contentViewController
+    self.window.rootViewController = self.contentViewController;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
