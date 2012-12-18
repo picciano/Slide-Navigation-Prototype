@@ -9,9 +9,14 @@
 #import "MenuViewController.h"
 #import "ModuleManager.h"
 
+// positive slides right, negative slides left
+#define HORIZONTAL_TRANSLATION_OFFSET -265.0f
+
 @interface MenuViewController ()
 - (void)slideThenHide;
 - (void)adjustAnchorPointForGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer;
+- (CGRect)originFrame;
+- (CGRect)offscreenFrame;
 @end
 
 @implementation MenuViewController
@@ -59,24 +64,15 @@ static NSString *CellIdentifier = @"Cell";
     [super viewDidAppear:animated];
     
     // to start this, we always want the image to be the entire screen, so set it there
-    [screenShotImageView setFrame:CGRectMake(0.0f, self.view.frame.size.height - screenShotImage.size.height, self.view.frame.size.width, screenShotImage.size.height)];
+    [screenShotImageView setFrame:[self originFrame]];
     
     // now we'll animate it across to the right over 0.2 seconds with an Ease In and Out curve
     // this uses blocks to do the animation. Inside the block the frame of the UIImageView has its
     // x value changed to where it will end up with the animation is complete.
     // this animation doesn't require any action when completed so the block is left empty
     [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        [screenShotImageView setFrame:CGRectMake(-265.0f, self.view.frame.size.height - screenShotImage.size.height, self.view.frame.size.width, screenShotImage.size.height)];
+        [screenShotImageView setFrame:[self offscreenFrame]];
     } completion:^(BOOL finished){  }];
-}
-
-- (void)slideThenHide
-{
-    // this animates the screenshot back to the left before swappin out the MenuViewController
-    // and the saved contentViewController
-    [UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        [screenShotImageView setFrame:CGRectMake(0.0f, self.view.frame.size.height - screenShotImage.size.height, self.view.frame.size.width, screenShotImage.size.height)];
-    } completion:^(BOOL finished){ app_delegate.window.rootViewController = app_delegate.contentViewController; }];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -84,6 +80,19 @@ static NSString *CellIdentifier = @"Cell";
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+    
+    if ([self.view superview] == nil)
+    {
+        screenShotImage = nil;
+    }
+}
+
+#pragma mark - UIGestureRecognizer actions
 
 - (void)singleTapScreenShot:(UITapGestureRecognizer *)gestureRecognizer
 {
@@ -105,30 +114,6 @@ static NSString *CellIdentifier = @"Cell";
     }
     else if ([gesture state] == UIGestureRecognizerStateEnded)
         [self slideThenHide];
-}
-
-- (void)adjustAnchorPointForGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
-{
-    if (gestureRecognizer.state == UIGestureRecognizerStateBegan)
-    {
-        UIView *piece = gestureRecognizer.view;
-        CGPoint locationInView = [gestureRecognizer locationInView:piece];
-        CGPoint locationInSuperview = [gestureRecognizer locationInView:piece.superview];
-        
-        piece.layer.anchorPoint = CGPointMake(locationInView.x / piece.bounds.size.width, locationInView.y / piece.bounds.size.height);
-        piece.center = locationInSuperview;
-    }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-    
-    if ([self.view superview] == nil)
-    {
-        screenShotImage = nil;
-    }
 }
 
 #pragma mark - UITableViewDataSource methods
@@ -163,6 +148,42 @@ static NSString *CellIdentifier = @"Cell";
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+#pragma mark - private methods
+
+- (void)slideThenHide
+{
+    // this animates the screenshot back to the left before swappin out the MenuViewController
+    // and the saved contentViewController
+    [UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [screenShotImageView setFrame:[self originFrame]];
+    } completion:^(BOOL finished){ app_delegate.window.rootViewController = app_delegate.contentViewController; }];
+}
+
+- (void)adjustAnchorPointForGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan)
+    {
+        UIView *piece = gestureRecognizer.view;
+        CGPoint locationInView = [gestureRecognizer locationInView:piece];
+        CGPoint locationInSuperview = [gestureRecognizer locationInView:piece.superview];
+        
+        piece.layer.anchorPoint = CGPointMake(locationInView.x / piece.bounds.size.width, locationInView.y / piece.bounds.size.height);
+        piece.center = locationInSuperview;
+    }
+}
+
+- (CGRect)originFrame
+{
+    return CGRectMake(0.0f, self.view.frame.size.height - screenShotImage.size.height, self.view.frame.size.width, screenShotImage.size.height);
+}
+
+- (CGRect)offscreenFrame
+{
+    CGRect rect = [self originFrame];
+    rect.origin.x = HORIZONTAL_TRANSLATION_OFFSET;
+    return rect;
 }
 
 @end
