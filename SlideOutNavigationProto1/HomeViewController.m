@@ -1,24 +1,28 @@
 //
-//  RedViewController.m
+//  HomeViewController.m
 //  SlideOutNavigationProto1
 //
-//  Created by Anthony Picciano on 12/17/12.
+//  Created by Anthony Picciano on 12/18/12.
 //  Copyright (c) 2012 Anthony Picciano. All rights reserved.
 //
 
-#import "RedViewController.h"
+#import "HomeViewController.h"
 
-@interface RedViewController ()
+@interface HomeViewController ()
 
 @end
 
-@implementation RedViewController
+@implementation HomeViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if (self)
+    {
+        [self setTitle:@"Home"];
+        
+        UIBarButtonItem *menuBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"three_lines"] style:UIBarButtonItemStyleBordered target:self action:@selector(slideMenuButtonTouched:)];
+        [self.navigationItem setRightBarButtonItem:menuBarButtonItem];
     }
     return self;
 }

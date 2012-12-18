@@ -9,7 +9,6 @@
 #import "ModuleManager.h"
 #import "Module.h"
 #import "SynthesizeSingleton.h"
-#import "RedViewController.h"
 
 @interface ModuleManager()
 @property (strong, nonatomic) NSArray *modules;
@@ -40,9 +39,15 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ModuleManager)
 
 - (UIViewController *)controllerAtIndex:(NSInteger)index
 {
-#warning Check for index out of bounds
+    UIViewController *viewController = [self controllerForClassName:[[self.modules objectAtIndex:index] className]];
     
-    return [self controllerForClassName:[[self.modules objectAtIndex:index] className]];
+    if ([[self.modules objectAtIndex:index] useNavigationController])
+    {
+        viewController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    }
+    
+    return viewController;
+    
 }
 
 - (NSInteger)numberOfSections
@@ -97,10 +102,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ModuleManager)
 - (void)loadModules
 {
     // load modules
-    // this will be replaced by a call to the snap appy service API
+    // this will be replaced by a call to a remote web service
     
     self.modules = [[NSArray alloc] initWithObjects:
-                    [Module moduleWithDisplayName:@"Home" className:@"RedViewController"],
+                    [Module moduleWithDisplayName:@"Home" className:@"HomeViewController" useNavigationController:YES],
                     [Module moduleWithDisplayName:@"Snap" className:@"SnapViewController"],
                     [Module moduleWithDisplayName:@"Shop" className:@"ShopViewController"],
                     [Module moduleWithDisplayName:@"Styles" className:@"StylesViewController"],
