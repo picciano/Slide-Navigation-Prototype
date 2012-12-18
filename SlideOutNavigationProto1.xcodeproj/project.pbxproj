@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E423A8F01680CE0E001758CC /* ModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E423A8EF1680CE0E001758CC /* ModuleManager.m */; };
 		E454D167167FC79E00210AD4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E454D166167FC79E00210AD4 /* UIKit.framework */; };
 		E454D169167FC79E00210AD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E454D168167FC79E00210AD4 /* Foundation.framework */; };
 		E454D16B167FC79E00210AD4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E454D16A167FC79E00210AD4 /* CoreGraphics.framework */; };
@@ -25,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E423A8EE1680CE0E001758CC /* ModuleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleManager.h; sourceTree = "<group>"; };
+		E423A8EF1680CE0E001758CC /* ModuleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleManager.m; sourceTree = "<group>"; };
+		E423A8F11680CEC2001758CC /* SynthesizeSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 		E454D162167FC79E00210AD4 /* SlideOutNavigationProto1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideOutNavigationProto1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E454D166167FC79E00210AD4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E454D168167FC79E00210AD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -63,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E423A8EC1680CDE8001758CC /* Module Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E423A8EE1680CE0E001758CC /* ModuleManager.h */,
+				E423A8EF1680CE0E001758CC /* ModuleManager.m */,
+			);
+			name = "Module Manager";
+			sourceTree = "<group>";
+		};
 		E454D157167FC79E00210AD4 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +108,7 @@
 			children = (
 				E454D175167FC79E00210AD4 /* AppDelegate.h */,
 				E454D176167FC79E00210AD4 /* AppDelegate.m */,
+				E423A8EC1680CDE8001758CC /* Module Manager */,
 				E454D183167FC82C00210AD4 /* Menu */,
 				E454D189167FCB4000210AD4 /* Red */,
 				E454D16D167FC79E00210AD4 /* Supporting Files */,
@@ -106,6 +120,7 @@
 		E454D16D167FC79E00210AD4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E423A8F11680CEC2001758CC /* SynthesizeSingleton.h */,
 				E454D16E167FC79E00210AD4 /* SlideOutNavigationProto1-Info.plist */,
 				E454D16F167FC79E00210AD4 /* InfoPlist.strings */,
 				E454D172167FC79E00210AD4 /* main.m */,
@@ -220,6 +235,7 @@
 				E454D187167FC85700210AD4 /* MenuViewController.m in Sources */,
 				E454D18D167FCB5D00210AD4 /* RedViewController.m in Sources */,
 				E454D194167FCD2200210AD4 /* UIViewController+UIViewController_SlideMenu.m in Sources */,
+				E423A8F01680CE0E001758CC /* ModuleManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +343,7 @@
 				E454D182167FC79E00210AD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

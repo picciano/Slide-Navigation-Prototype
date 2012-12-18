@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "RedViewController.h"
+#import "ModuleManager.h"
 
 @implementation AppDelegate
 
@@ -20,7 +20,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // create the content view controller using the LogoExpandingViewController for no particular reason
-    self.contentViewController = [[RedViewController alloc] initWithNibName:nil bundle:nil];
+    self.contentViewController = [[ModuleManager sharedModuleManager] defaultController];
     
     // create the menuViewController also in the app delegate so we can swap it in as the
     // windows root view controller whenever its required
