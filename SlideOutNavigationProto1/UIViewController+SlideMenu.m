@@ -1,14 +1,14 @@
 //
-//  UIViewController+UIViewController_SlideMenu.m
+//  UIViewController+SlideMenu.m
 //  SlideOutNavigationProto1
 //
-//  Created by Anthony Picciano on 12/17/12.
+//  Created by Anthony Picciano on 12/18/12.
 //  Copyright (c) 2012 Anthony Picciano. All rights reserved.
 //
 
-#import "UIViewController+UIViewController_SlideMenu.h"
+#import "UIViewController+SlideMenu.h"
 
-@implementation UIViewController (UIViewController_SlideMenu)
+@implementation UIViewController (SlideMenu)
 
 - (IBAction)slideMenuButtonTouched:(id)sender
 {

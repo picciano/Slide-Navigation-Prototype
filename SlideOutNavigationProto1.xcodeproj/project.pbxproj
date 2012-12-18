@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E423A8F01680CE0E001758CC /* ModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E423A8EF1680CE0E001758CC /* ModuleManager.m */; };
+		E423A8F71680E285001758CC /* Module.m in Sources */ = {isa = PBXBuildFile; fileRef = E423A8F61680E285001758CC /* Module.m */; };
+		E423A8FA1680E972001758CC /* UIViewController+SlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E423A8F91680E972001758CC /* UIViewController+SlideMenu.m */; };
 		E454D167167FC79E00210AD4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E454D166167FC79E00210AD4 /* UIKit.framework */; };
 		E454D169167FC79E00210AD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E454D168167FC79E00210AD4 /* Foundation.framework */; };
 		E454D16B167FC79E00210AD4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E454D16A167FC79E00210AD4 /* CoreGraphics.framework */; };
@@ -22,13 +24,16 @@
 		E454D18D167FCB5D00210AD4 /* RedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E454D18B167FCB5D00210AD4 /* RedViewController.m */; };
 		E454D18E167FCB5D00210AD4 /* RedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E454D18C167FCB5D00210AD4 /* RedViewController.xib */; };
 		E454D191167FCC9400210AD4 /* three_lines@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E454D190167FCC9400210AD4 /* three_lines@2x.png */; };
-		E454D194167FCD2200210AD4 /* UIViewController+UIViewController_SlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E454D193167FCD2200210AD4 /* UIViewController+UIViewController_SlideMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E423A8EE1680CE0E001758CC /* ModuleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleManager.h; sourceTree = "<group>"; };
 		E423A8EF1680CE0E001758CC /* ModuleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleManager.m; sourceTree = "<group>"; };
 		E423A8F11680CEC2001758CC /* SynthesizeSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
+		E423A8F51680E285001758CC /* Module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Module.h; sourceTree = "<group>"; };
+		E423A8F61680E285001758CC /* Module.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Module.m; sourceTree = "<group>"; };
+		E423A8F81680E972001758CC /* UIViewController+SlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SlideMenu.h"; sourceTree = "<group>"; };
+		E423A8F91680E972001758CC /* UIViewController+SlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SlideMenu.m"; sourceTree = "<group>"; };
 		E454D162167FC79E00210AD4 /* SlideOutNavigationProto1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideOutNavigationProto1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E454D166167FC79E00210AD4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E454D168167FC79E00210AD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,8 +54,6 @@
 		E454D18B167FCB5D00210AD4 /* RedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedViewController.m; sourceTree = "<group>"; };
 		E454D18C167FCB5D00210AD4 /* RedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RedViewController.xib; sourceTree = "<group>"; };
 		E454D190167FCC9400210AD4 /* three_lines@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "three_lines@2x.png"; sourceTree = "<group>"; };
-		E454D192167FCD2200210AD4 /* UIViewController+UIViewController_SlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+UIViewController_SlideMenu.h"; sourceTree = "<group>"; };
-		E454D193167FCD2200210AD4 /* UIViewController+UIViewController_SlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+UIViewController_SlideMenu.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 			children = (
 				E423A8EE1680CE0E001758CC /* ModuleManager.h */,
 				E423A8EF1680CE0E001758CC /* ModuleManager.m */,
+				E423A8F51680E285001758CC /* Module.h */,
+				E423A8F61680E285001758CC /* Module.m */,
 			);
 			name = "Module Manager";
 			sourceTree = "<group>";
@@ -138,8 +143,8 @@
 				E454D184167FC85700210AD4 /* MenuViewController.h */,
 				E454D185167FC85700210AD4 /* MenuViewController.m */,
 				E454D186167FC85700210AD4 /* MenuViewController.xib */,
-				E454D192167FCD2200210AD4 /* UIViewController+UIViewController_SlideMenu.h */,
-				E454D193167FCD2200210AD4 /* UIViewController+UIViewController_SlideMenu.m */,
+				E423A8F81680E972001758CC /* UIViewController+SlideMenu.h */,
+				E423A8F91680E972001758CC /* UIViewController+SlideMenu.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -234,8 +239,9 @@
 				E454D177167FC79E00210AD4 /* AppDelegate.m in Sources */,
 				E454D187167FC85700210AD4 /* MenuViewController.m in Sources */,
 				E454D18D167FCB5D00210AD4 /* RedViewController.m in Sources */,
-				E454D194167FCD2200210AD4 /* UIViewController+UIViewController_SlideMenu.m in Sources */,
 				E423A8F01680CE0E001758CC /* ModuleManager.m in Sources */,
+				E423A8F71680E285001758CC /* Module.m in Sources */,
+				E423A8FA1680E972001758CC /* UIViewController+SlideMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

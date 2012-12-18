@@ -13,5 +13,8 @@
 + (ModuleManager *)sharedModuleManager;
 
 - (UIViewController *)defaultController;
+- (UIViewController *)controllerAtIndex:(NSInteger)index;
+- (NSInteger)numberOfModules;
+- (NSString *)moduleDisplayNameAtIndex:(NSInteger)index;
 
 @end

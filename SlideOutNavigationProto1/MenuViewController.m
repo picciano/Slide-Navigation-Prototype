@@ -7,6 +7,7 @@
 //
 
 #import "MenuViewController.h"
+#import "ModuleManager.h"
 
 @interface MenuViewController ()
 - (void)slideThenHide;
@@ -14,7 +15,8 @@
 @end
 
 @implementation MenuViewController
-@synthesize screenShotImageView, screenShotImage, tapGesture, panGesture;
+@synthesize screenShotImageView, tableView = _tableView, screenShotImage, tapGesture, panGesture;
+static NSString *CellIdentifier = @"Cell";
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,6 +41,8 @@
     [panGesture setMaximumNumberOfTouches:2];
     [panGesture setDelegate:self];
     [screenShotImageView addGestureRecognizer:panGesture];
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -121,7 +125,55 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
     
-    screenShotImage = nil;
+    if ([self.view superview] == nil)
+    {
+        screenShotImage = nil;
+    }
+}
+
+#pragma mark - UITableViewDataSource methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (section == 0)
+    {
+        return [[ModuleManager sharedModuleManager] numberOfModules];
+    }
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    if (indexPath.section == 0)
+    {
+        [cell.textLabel setText:[[ModuleManager sharedModuleManager] moduleDisplayNameAtIndex:indexPath.row]];
+    }
+    else
+    {
+        [cell.textLabel setText:@"My Rewards!"];
+    }
+    
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
 }
 
 @end
