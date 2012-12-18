@@ -37,6 +37,8 @@
 		E454D17D167FC79E00210AD4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E454D17C167FC79E00210AD4 /* Default-568h@2x.png */; };
 		E454D187167FC85700210AD4 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E454D185167FC85700210AD4 /* MenuViewController.m */; };
 		E454D188167FC85700210AD4 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E454D186167FC85700210AD4 /* MenuViewController.xib */; };
+		E4DCBFA516812C5B0092F164 /* MyPointsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DCBFA316812C5B0092F164 /* MyPointsViewController.m */; };
+		E4DCBFA616812C5B0092F164 /* MyPointsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4DCBFA416812C5B0092F164 /* MyPointsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,9 @@
 		E454D184167FC85700210AD4 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		E454D185167FC85700210AD4 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		E454D186167FC85700210AD4 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		E4DCBFA216812C5B0092F164 /* MyPointsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPointsViewController.h; sourceTree = "<group>"; };
+		E4DCBFA316812C5B0092F164 /* MyPointsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPointsViewController.m; sourceTree = "<group>"; };
+		E4DCBFA416812C5B0092F164 /* MyPointsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPointsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +228,7 @@
 				E423A91A16812594001758CC /* Styles */,
 				E423A920168125F4001758CC /* Settings */,
 				E423A9261681263A001758CC /* About */,
+				E4DCBFA016812C440092F164 /* My Points */,
 				E423A8EC1680CDE8001758CC /* Module Manager */,
 				E454D16D167FC79E00210AD4 /* Supporting Files */,
 				E454D18F167FCC7A00210AD4 /* Images */,
@@ -264,6 +270,16 @@
 				E423A90E168117F5001758CC /* three_lines@2x.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		E4DCBFA016812C440092F164 /* My Points */ = {
+			isa = PBXGroup;
+			children = (
+				E4DCBFA216812C5B0092F164 /* MyPointsViewController.h */,
+				E4DCBFA316812C5B0092F164 /* MyPointsViewController.m */,
+				E4DCBFA416812C5B0092F164 /* MyPointsViewController.xib */,
+			);
+			name = "My Points";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +347,7 @@
 				E423A92516812603001758CC /* SettingsViewController.xib in Resources */,
 				E423A92B16812648001758CC /* AboutViewController.xib in Resources */,
 				E423A93116812884001758CC /* ProductViewController.xib in Resources */,
+				E4DCBFA616812C5B0092F164 /* MyPointsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +371,7 @@
 				E423A92416812603001758CC /* SettingsViewController.m in Sources */,
 				E423A92A16812648001758CC /* AboutViewController.m in Sources */,
 				E423A93016812884001758CC /* ProductViewController.m in Sources */,
+				E4DCBFA516812C5B0092F164 /* MyPointsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
