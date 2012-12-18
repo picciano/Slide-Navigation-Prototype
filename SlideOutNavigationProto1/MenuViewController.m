@@ -11,6 +11,8 @@
 
 // positive slides right, negative slides left
 #define HORIZONTAL_TRANSLATION_OFFSET -265.0f
+#define MENU_REVEAL_ANIMATION_DURATION 0.2f
+#define MENU_CONCEAL_ANIMATION_DURATION 0.1f
 
 @interface MenuViewController ()
 - (void)slideThenHide;
@@ -70,7 +72,7 @@ static NSString *CellIdentifier = @"Cell";
     // this uses blocks to do the animation. Inside the block the frame of the UIImageView has its
     // x value changed to where it will end up with the animation is complete.
     // this animation doesn't require any action when completed so the block is left empty
-    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:MENU_REVEAL_ANIMATION_DURATION delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
         [screenShotImageView setFrame:[self offscreenFrame]];
     } completion:^(BOOL finished){  }];
 }
@@ -153,7 +155,7 @@ static NSString *CellIdentifier = @"Cell";
 {
     // this animates the screenshot back to the left before swappin out the MenuViewController
     // and the saved contentViewController
-    [UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:MENU_CONCEAL_ANIMATION_DURATION delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
         [screenShotImageView setFrame:[self originFrame]];
     } completion:^(BOOL finished){ app_delegate.window.rootViewController = app_delegate.contentViewController; }];
 }
