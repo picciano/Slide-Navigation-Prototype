@@ -1,5 +1,5 @@
 //
-//  HomeViewController.h
+//  ProductViewController.h
 //  SlideOutNavigationProto1
 //
 //  Created by Anthony Picciano on 12/18/12.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomeViewController : UIViewController
-
-- (IBAction)selectProduct:(id)sender;
+@interface ProductViewController : UIViewController
 
 @end

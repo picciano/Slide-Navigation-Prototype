@@ -16,6 +16,16 @@
 		E423A90B16810A54001758CC /* SnapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E423A90916810A54001758CC /* SnapViewController.xib */; };
 		E423A90D1681176C001758CC /* three_lines.png in Resources */ = {isa = PBXBuildFile; fileRef = E423A90C1681176C001758CC /* three_lines.png */; };
 		E423A90F168117F5001758CC /* three_lines@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E423A90E168117F5001758CC /* three_lines@2x.png */; };
+		E423A9181681251F001758CC /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E423A9161681251F001758CC /* ShopViewController.m */; };
+		E423A9191681251F001758CC /* ShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E423A9171681251F001758CC /* ShopViewController.xib */; };
+		E423A91E168125B7001758CC /* StylesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E423A91C168125B7001758CC /* StylesViewController.m */; };
+		E423A91F168125B7001758CC /* StylesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E423A91D168125B7001758CC /* StylesViewController.xib */; };
+		E423A92416812603001758CC /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E423A92216812603001758CC /* SettingsViewController.m */; };
+		E423A92516812603001758CC /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E423A92316812603001758CC /* SettingsViewController.xib */; };
+		E423A92A16812648001758CC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E423A92816812648001758CC /* AboutViewController.m */; };
+		E423A92B16812648001758CC /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E423A92916812648001758CC /* AboutViewController.xib */; };
+		E423A93016812884001758CC /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E423A92E16812884001758CC /* ProductViewController.m */; };
+		E423A93116812884001758CC /* ProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E423A92F16812884001758CC /* ProductViewController.xib */; };
 		E454D167167FC79E00210AD4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E454D166167FC79E00210AD4 /* UIKit.framework */; };
 		E454D169167FC79E00210AD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E454D168167FC79E00210AD4 /* Foundation.framework */; };
 		E454D16B167FC79E00210AD4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E454D16A167FC79E00210AD4 /* CoreGraphics.framework */; };
@@ -45,6 +55,21 @@
 		E423A90916810A54001758CC /* SnapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SnapViewController.xib; sourceTree = "<group>"; };
 		E423A90C1681176C001758CC /* three_lines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = three_lines.png; sourceTree = "<group>"; };
 		E423A90E168117F5001758CC /* three_lines@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "three_lines@2x.png"; sourceTree = "<group>"; };
+		E423A9151681251F001758CC /* ShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopViewController.h; sourceTree = "<group>"; };
+		E423A9161681251F001758CC /* ShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopViewController.m; sourceTree = "<group>"; };
+		E423A9171681251F001758CC /* ShopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopViewController.xib; sourceTree = "<group>"; };
+		E423A91B168125B7001758CC /* StylesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StylesViewController.h; sourceTree = "<group>"; };
+		E423A91C168125B7001758CC /* StylesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StylesViewController.m; sourceTree = "<group>"; };
+		E423A91D168125B7001758CC /* StylesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StylesViewController.xib; sourceTree = "<group>"; };
+		E423A92116812603001758CC /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		E423A92216812603001758CC /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		E423A92316812603001758CC /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		E423A92716812648001758CC /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		E423A92816812648001758CC /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		E423A92916812648001758CC /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		E423A92D16812884001758CC /* ProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductViewController.h; sourceTree = "<group>"; };
+		E423A92E16812884001758CC /* ProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductViewController.m; sourceTree = "<group>"; };
+		E423A92F16812884001758CC /* ProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductViewController.xib; sourceTree = "<group>"; };
 		E454D162167FC79E00210AD4 /* SlideOutNavigationProto1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideOutNavigationProto1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E454D166167FC79E00210AD4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E454D168167FC79E00210AD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -108,6 +133,56 @@
 			name = Snap;
 			sourceTree = "<group>";
 		};
+		E423A914168124F8001758CC /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				E423A9151681251F001758CC /* ShopViewController.h */,
+				E423A9161681251F001758CC /* ShopViewController.m */,
+				E423A9171681251F001758CC /* ShopViewController.xib */,
+			);
+			name = Shop;
+			sourceTree = "<group>";
+		};
+		E423A91A16812594001758CC /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				E423A91B168125B7001758CC /* StylesViewController.h */,
+				E423A91C168125B7001758CC /* StylesViewController.m */,
+				E423A91D168125B7001758CC /* StylesViewController.xib */,
+			);
+			name = Styles;
+			sourceTree = "<group>";
+		};
+		E423A920168125F4001758CC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E423A92116812603001758CC /* SettingsViewController.h */,
+				E423A92216812603001758CC /* SettingsViewController.m */,
+				E423A92316812603001758CC /* SettingsViewController.xib */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		E423A9261681263A001758CC /* About */ = {
+			isa = PBXGroup;
+			children = (
+				E423A92716812648001758CC /* AboutViewController.h */,
+				E423A92816812648001758CC /* AboutViewController.m */,
+				E423A92916812648001758CC /* AboutViewController.xib */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
+		E423A92C1681286E001758CC /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				E423A92D16812884001758CC /* ProductViewController.h */,
+				E423A92E16812884001758CC /* ProductViewController.m */,
+				E423A92F16812884001758CC /* ProductViewController.xib */,
+			);
+			name = Product;
+			sourceTree = "<group>";
+		};
 		E454D157167FC79E00210AD4 = {
 			isa = PBXGroup;
 			children = (
@@ -142,7 +217,12 @@
 				E454D176167FC79E00210AD4 /* AppDelegate.m */,
 				E454D183167FC82C00210AD4 /* Menu */,
 				E423A8FB168101C7001758CC /* Home */,
+				E423A92C1681286E001758CC /* Product */,
 				E423A90616810A40001758CC /* Snap */,
+				E423A914168124F8001758CC /* Shop */,
+				E423A91A16812594001758CC /* Styles */,
+				E423A920168125F4001758CC /* Settings */,
+				E423A9261681263A001758CC /* About */,
 				E423A8EC1680CDE8001758CC /* Module Manager */,
 				E454D16D167FC79E00210AD4 /* Supporting Files */,
 				E454D18F167FCC7A00210AD4 /* Images */,
@@ -246,6 +326,11 @@
 				E423A90B16810A54001758CC /* SnapViewController.xib in Resources */,
 				E423A90D1681176C001758CC /* three_lines.png in Resources */,
 				E423A90F168117F5001758CC /* three_lines@2x.png in Resources */,
+				E423A9191681251F001758CC /* ShopViewController.xib in Resources */,
+				E423A91F168125B7001758CC /* StylesViewController.xib in Resources */,
+				E423A92516812603001758CC /* SettingsViewController.xib in Resources */,
+				E423A92B16812648001758CC /* AboutViewController.xib in Resources */,
+				E423A93116812884001758CC /* ProductViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +349,11 @@
 				E423A8FA1680E972001758CC /* UIViewController+SlideMenu.m in Sources */,
 				E423A904168103F5001758CC /* HomeViewController.m in Sources */,
 				E423A90A16810A54001758CC /* SnapViewController.m in Sources */,
+				E423A9181681251F001758CC /* ShopViewController.m in Sources */,
+				E423A91E168125B7001758CC /* StylesViewController.m in Sources */,
+				E423A92416812603001758CC /* SettingsViewController.m in Sources */,
+				E423A92A16812648001758CC /* AboutViewController.m in Sources */,
+				E423A93016812884001758CC /* ProductViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

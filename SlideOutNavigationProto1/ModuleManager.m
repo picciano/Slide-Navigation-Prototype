@@ -34,20 +34,35 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ModuleManager)
 
 - (UIViewController *)defaultController
 {
-    return [self controllerAtIndex:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    return [self controllerAtIndexPath:indexPath];
 }
 
-- (UIViewController *)controllerAtIndex:(NSInteger)index
+- (UIViewController *)controllerAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIViewController *viewController = [self controllerForClassName:[[self.modules objectAtIndex:index] className]];
+    Module *module = nil;
     
-    if ([[self.modules objectAtIndex:index] useNavigationController])
+    switch (indexPath.section) {
+        case 0:
+            module = [self.modules objectAtIndex:indexPath.row];
+            break;
+            
+        case 1:
+            module = self.myPointsModule;
+            break;
+            
+        default:
+            break;
+    }
+    
+    UIViewController *viewController = [self controllerForClassName:module.className];
+    
+    if ([module useNavigationController])
     {
         viewController = [[UINavigationController alloc] initWithRootViewController:viewController];
     }
     
     return viewController;
-    
 }
 
 - (NSInteger)numberOfSections
