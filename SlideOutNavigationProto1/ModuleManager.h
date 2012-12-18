@@ -14,7 +14,8 @@
 
 - (UIViewController *)defaultController;
 - (UIViewController *)controllerAtIndex:(NSInteger)index;
-- (NSInteger)numberOfModules;
-- (NSString *)moduleDisplayNameAtIndex:(NSInteger)index;
+- (NSInteger)numberOfSections;
+- (NSInteger)numberOfModulesInSection:(NSInteger)section;
+- (NSString *)moduleDisplayNameAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

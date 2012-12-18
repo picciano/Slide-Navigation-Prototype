@@ -135,30 +135,19 @@ static NSString *CellIdentifier = @"Cell";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return [[ModuleManager sharedModuleManager] numberOfSections];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0)
-    {
-        return [[ModuleManager sharedModuleManager] numberOfModules];
-    }
-    return 1;
+    return [[ModuleManager sharedModuleManager] numberOfModulesInSection:(NSInteger)section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    if (indexPath.section == 0)
-    {
-        [cell.textLabel setText:[[ModuleManager sharedModuleManager] moduleDisplayNameAtIndex:indexPath.row]];
-    }
-    else
-    {
-        [cell.textLabel setText:@"My Rewards!"];
-    }
+    [cell.textLabel setText:[[ModuleManager sharedModuleManager] moduleDisplayNameAtIndexPath:indexPath]];
     
     return cell;
 }

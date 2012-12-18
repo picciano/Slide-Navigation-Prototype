@@ -13,7 +13,9 @@
 
 @interface ModuleManager()
 @property (strong, nonatomic) NSArray *modules;
+@property (strong, nonatomic) Module *myPointsModule;
 - (void)loadModules;
+- (UIViewController *)controllerForClassName:(NSString *)className;
 @end
 
 @implementation ModuleManager
@@ -40,22 +42,57 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ModuleManager)
 {
 #warning Check for index out of bounds
     
-    Class controllerClassName = NSClassFromString([[self.modules objectAtIndex:index] className]);
-    return [[controllerClassName alloc] initWithNibName:nil bundle:nil];
+    return [self controllerForClassName:[[self.modules objectAtIndex:index] className]];
 }
 
-- (NSInteger)numberOfModules
+- (NSInteger)numberOfSections
 {
-    return [self.modules count];
+    return 2;
 }
 
-- (NSString *)moduleDisplayNameAtIndex:(NSInteger)index
+- (NSInteger)numberOfModulesInSection:(NSInteger)section
 {
-#warning Check for index out of bounds
-    return [[self.modules objectAtIndex:index] displayName];
+    switch (section) {
+        case 0:
+            return [self.modules count];
+            break;
+            
+        case 1:
+            return 1;
+            break;
+            
+        default:
+            break;
+    }
+    
+    return 0;
+}
+
+- (NSString *)moduleDisplayNameAtIndexPath:(NSIndexPath *)indexPath
+{    
+    switch (indexPath.section) {
+        case 0:
+            return [[self.modules objectAtIndex:indexPath.row] displayName];
+            break;
+            
+        case 1:
+            return [self.myPointsModule displayName];
+            break;
+            
+        default:
+            break;
+    }
+    
+    return nil;
 }
 
 #pragma mark - private methods
+
+- (UIViewController *)controllerForClassName:(NSString *)className
+{
+    Class controllerClassName = NSClassFromString(className);
+    return [[controllerClassName alloc] initWithNibName:nil bundle:nil];
+}
 
 - (void)loadModules
 {
@@ -68,7 +105,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ModuleManager)
                     [Module moduleWithDisplayName:@"Shop" className:@"ShopViewController"],
                     [Module moduleWithDisplayName:@"Styles" className:@"StylesViewController"],
                     [Module moduleWithDisplayName:@"Settings" className:@"SettingsViewController"],
-                    [Module moduleWithDisplayName:@"About SA" className:@"AboutViewController"], nil];
+                    [Module moduleWithDisplayName:@"About" className:@"AboutViewController"], nil];
+    
+    self.myPointsModule = [Module moduleWithDisplayName:@"My Points" className:@"MyPointsViewController"];
 }
 
 @end
